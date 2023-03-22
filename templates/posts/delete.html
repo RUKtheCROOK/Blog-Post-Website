@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<!-- the title -->
+{% block title %}Delete {{post.title}}{% endblock title %}
+
+<!-- the content -->
+{% block content %}
+<h1>Delete {{post.title}}</h1>
+{% if message %}
+<h3>{{message}}</h3>
+{% else %}
+<h3>Are you sure you want to delete this post?</h3>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+</form>
+{% endif %} {% endblock content %}

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +11,8 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" href="{% block link %}{% endblock link %}" />
     <title>{% block title %}{%endblock title %}</title>
   </head>
   <body>

@@ -7,7 +7,12 @@
 {% block content %}
 <h1>{{post.title}}</h1>
 <h4>{{post.subtitle}}</h4>
+<h5>
+  Created by: <b><i>{{post.author}}</i></b>
+</h5>
 <h6>Created on: {{post.created_on}}</h6>
 <h4>Body:</h4>
 <p>{{post.body}}</p>
+<a href="{% url 'edit' post.id %}" class="btn btn-primary">Edit</a>
+<a href="{% url 'delete' post.id %}" class="btn btn-danger">Delete</a>
 {% endblock content %}
