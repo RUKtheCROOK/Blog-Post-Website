@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+<!-- load static -->
+{% load static %}
+<!-- the css -->
+{% block link %}{% static 'list.css' %}{% endblock link %}
 <!-- the title -->
 {% block title %}Posts{% endblock title %}
 
@@ -8,7 +12,7 @@
 <div class="container text-center">
   <h1>Post</h1>
   {% for post in post_list %}
-  <div class="container card" style="width: 18rem">
+  <div class="container card list-card">
     <div class="card-body">
       <h5 class="card-title">{{post.title}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>

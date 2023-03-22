@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+<!-- load static -->
+{% load static %}
+
+<!-- the css -->
+{% block link %}{% static 'detail.css' %}{% endblock link %}
+
 <!-- the title -->
 {% block title %}Detailed {{post.title}}{% endblock title %}
 
@@ -11,7 +17,6 @@
   Created by: <b><i>{{post.author}}</i></b>
 </h5>
 <h6>Created on: {{post.created_on}}</h6>
-<h4>Body:</h4>
 <p>{{post.body}}</p>
 <a href="{% url 'edit' post.id %}" class="btn btn-primary">Edit</a>
 <a href="{% url 'delete' post.id %}" class="btn btn-danger">Delete</a>

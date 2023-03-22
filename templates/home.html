@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+<!-- load static -->
+{% load static %}
+<!-- the css -->
+{% block link %}{% static 'home.css' %}{% endblock link %}
 <!-- this is the title -->
 {% block title %}Home{% endblock title %}
 
