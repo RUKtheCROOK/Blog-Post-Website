@@ -32,3 +32,13 @@ label {
   margin-right: 10px;
   text-decoration: underline;
 }
+
+li {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: underline;
+  list-style: none;
+  padding: 10px;
+  color: red;
+}
