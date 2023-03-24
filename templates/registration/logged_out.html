@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!-- load static -->
+
+{% load static %}
+<!-- the css -->
+
+{% block link %} {% static 'new.css'%} {% endblock link %}
+<!-- the title -->
+
+{% block title %}Logged Out{% endblock title %}
+
+<!-- the content -->
+
+{% block content %}
+<div class="container text-center">
+  <h1>Logged Out</h1>
+  <div class="container card create-parent">
+    <p>You have been logged out.</p>
+    <a href="{% url 'login' %}">Login</a>
+  </div>
+  {% endblock content %}
+</div>
