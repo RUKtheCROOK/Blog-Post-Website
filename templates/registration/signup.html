@@ -1,23 +1,27 @@
 {% extends 'base.html' %}
+
 <!-- load static -->
 
 {% load static %}
+
 <!-- the css -->
 
 {% block link %} {% static 'new.css'%} {% endblock link %}
+
 <!-- the title -->
 
-{% block title %}Logged Out{% endblock title %}
+{% block title %}Sign Up{% endblock title %}
 
 <!-- the content -->
 
 {% block content %}
 <div class="container text-center">
-  <h1>Logged Out</h1>
+  <h1>Sign Up</h1>
   <div class="container card create-parent">
-    <p>You have been logged out.</p>
-    <a href="{% url 'login' %}">Login</a>
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
   </div>
 </div>
-  {% endblock content %}
-
+{% endblock content %}

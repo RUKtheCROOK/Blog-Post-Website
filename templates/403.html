@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 <!-- load static -->
 
 {% load static %}
@@ -7,17 +8,18 @@
 {% block link %} {% static 'new.css'%} {% endblock link %}
 <!-- the title -->
 
-{% block title %}Logged Out{% endblock title %}
+{% block title %}Forbidden (403){% endblock title %}
 
 <!-- the content -->
 
 {% block content %}
 <div class="container text-center">
-  <h1>Logged Out</h1>
+  <h1>Forbidden (403)</h1>
   <div class="container card create-parent">
-    <p>You have been logged out.</p>
-    <a href="{% url 'login' %}">Login</a>
+    <p>
+      You don't have permission to access the requested resource. It is either
+      read-protected or not readable by the server.
+    </p>
   </div>
 </div>
-  {% endblock content %}
-
+{% endblock content %}

@@ -37,15 +37,21 @@
             >
             <a class="nav-link" href="{% url 'about' %}">About</a>
             <a class="nav-link" href="{% url 'list' %}">Posts</a>
-            <a class="nav-link" href="{% url 'new' %}">Create Post</a>
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
+
+            {% if user.is_authenticated %}
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             <a class="nav-link" href="{% url 'password_change' %}"
               >Change Password</a
             >
+            <a class="nav-link" href="{% url 'new' %}">Create Post</a>
+            <a class="nav-link" href="{% url 'drafts' %}">Drafts</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
             <a class="nav-link" href="{% url 'password_reset' %}"
               >Reset Password</a
             >
+            <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+            {% endif %}
           </div>
         </div>
       </div>
