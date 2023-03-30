@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+<!-- load static -->
+
+{% load static %}
+
+<!-- the css -->
+
+{% block link %} {% static 'new.css'%} {% endblock link %}
+
+<!-- the title -->
+
+{% block title %}Not Found (404){% endblock title %}
+
+<!-- the content -->
+
+{% block content %}
+<div class="container text-center">
+  <h1>404</h1>
+  <h2>Page not found</h2>
+  <p>Sorry, but the page you were trying to view does not exist.</p>
+  <a class="btn btn-dark" href="{% url 'home' %}">Home</a>
+</div>
+{% endblock content %}

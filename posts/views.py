@@ -17,8 +17,8 @@ class PostListView(ListView):
         context["timestamp"] = datetime.now().strftime('%F %H:%M:%S')
         return context
 
-class PostDraftListView(ListView):
-    template_name = 'posts_list.html'  
+class PostDraftListView(LoginRequiredMixin, ListView):
+    template_name = 'posts/list.html'  
     model = Post
     
     def get_context_data(self, **kwargs):
